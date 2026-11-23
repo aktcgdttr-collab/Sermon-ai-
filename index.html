@@ -1,1 +1,61 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SERMON AI</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#071311;color:white;font-family:Arial,sans-serif}
+header{padding:22px;background:#10221e;color:#a7edcf;font-size:24px;font-weight:bold}
+main{max-width:850px;margin:auto;padding:25px}
+.hero{text-align:center;padding:35px 10px}
+h1{font-size:42px}
+h1 span{color:#a7edcf}
+p{color:#b5c8bf;line-height:1.6}
+.panel,.feature{background:#10221e;border:1px solid #29483e;border-radius:15px;padding:20px;margin:18px 0}
+input[type=url],input[type=file]{width:100%;padding:14px;margin:10px 0;background:#071311;color:white;border:1px solid #36564b;border-radius:8px}
+button{width:100%;padding:15px;background:#a7edcf;border:0;border-radius:8px;font-weight:bold}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+h3{color:#a7edcf}
+#status{color:#a7edcf}
+@media(max-width:550px){h1{font-size:32px}.features{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>SERMON AI</header>
+<main>
+<section class="hero">
+<p>YOUR SERMON. REIMAGINED.</p>
+<h1>Turn sermons into <span>stories.</span></h1>
+<p>Create Reels, Shorts and deeper Bible teaching content.</p>
+</section>
+<section class="panel">
+<h2>Start a New Project</h2>
+<label>YouTube Sermon URL</label>
+<input id="url" type="url" placeholder="Paste YouTube link">
+<p>Or upload a sermon video</p>
+<input id="video" type="file" accept="video/*">
+<button onclick="startProject()">Start Sermon Project</button>
+<p id="status"></p>
+</section>
+<h2>AI Editing Studio</h2>
+<div class="features">
+<div class="feature"><h3>Sermon Analysis</h3><p>Find powerful sermon moments.</p></div>
+<div class="feature"><h3>Kinetic Captions</h3><p>Dynamic animated subtitles.</p></div>
+<div class="feature"><h3>AI B-Roll</h3><p>Visual storytelling.</p></div>
+<div class="feature"><h3>Deep Teaching</h3><p>Bible teaching clips.</p></div>
+</div>
+</main>
+<script>
+function startProject(){
+const url=document.getElementById('url').value;
+const video=document.getElementById('video').files[0];
+document.getElementById('status').textContent=
+url||video?'Input received. AI processing will be added next.':'Please add a video or YouTube link.';
+}
+</script>
+</body>
+</html>
